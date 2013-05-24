@@ -22,6 +22,12 @@ For example:
     // echo markup for standard ad code here  
 }`
 
+**NOTE:** You must make use of the conditional tag `is_premium_content()` somewhere in your theme, otherwise marking posts as premium will have no effect. For more information about how to use conditional tags, refer to [the Codex](http://codex.wordpress.org/Conditional_Tags "Link to Conditional Tags in the WordPress Codex").
+
 == Installation ==
 
 Extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation and then activate the Plugin from Plugins page.
+
+There are no settings or configuration for this plugin.
+
+**NOTE:** You must make use of the conditional tag `is_premium_content()` somewhere in your theme, otherwise marking posts as premium will have no effect. For more information about how to use conditional tags, refer to [the Codex](http://codex.wordpress.org/Conditional_Tags "Link to Conditional Tags in the WordPress Codex").

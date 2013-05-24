@@ -35,7 +35,7 @@ function sms_add_premium_post_checkbox() {
         $checked = in_array( $post->ID, $premium_posts ) ? true : false;
 
         // Set the label for the checkbox in a way that can be translated.
-        $label   = __( 'Premium Posts', 'premium-posts' );
+        $label = apply_filters( 'premium_post_checkbox_label', __( 'Premium Post', 'premium-posts' ) );
 
         // Echo the form HTML.
         echo '<div class="misc-pub-section misc-pub-section-last">';

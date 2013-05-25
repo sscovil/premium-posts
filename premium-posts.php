@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Premium Posts
  * Plugin URI: https://github.com/sscovil/premium-posts
- * Description: Adds a checkbox to the Edit Post screen that allows you to mark a post as 'Premium' content.
+ * Description: Adds a checkbox to the Edit Post screen that allows you to mark a post as 'Premium'.
  * Version: 2.0
  * Author: Shaun Scovil
  * Author URI: http://shaunscovil.com
@@ -120,7 +120,7 @@ class Premium_Posts {
     /**
      * Add Column to Post Table
      *
-     * @param $cols
+     * @param  array $cols
      * @return array
      */
     function add_column_to_post_table( $cols ) {
@@ -200,7 +200,7 @@ class Premium_Posts {
     /**
      * Save Post
      *
-     * @param $post_id
+     * @param  int   $post_id
      * @return mixed
      */
     function save_post( $post_id ) {

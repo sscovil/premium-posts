@@ -1,0 +1,48 @@
+# Copyright (C) 2013 Premium Posts
+# This file is distributed under the same license as the Premium Posts package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Premium Posts 2.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/premium-posts\n"
+"POT-Creation-Date: 2013-05-26 14:19:18+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: premium-posts.php:81 premium-posts.php:108 premium-posts.php:127
+#: premium-posts.php:174
+msgid "Premium Post"
+msgstr ""
+
+#: premium-posts.php:150
+msgid "Premium"
+msgstr ""
+
+#: premium-posts.php:151
+msgid "Standard"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Premium Posts"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/sscovil/premium-posts"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Adds a checkbox to the Edit Post screen that allows you to mark a post as "
+"'Premium'."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Shaun Scovil"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://shaunscovil.com"
+msgstr ""

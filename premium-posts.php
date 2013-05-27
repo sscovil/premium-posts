@@ -3,7 +3,7 @@
  * Plugin Name: Premium Posts
  * Plugin URI: https://github.com/sscovil/premium-posts
  * Description: Adds a checkbox to the Edit Post screen that allows you to mark a post as 'Premium'.
- * Version: 2.0
+ * Version: 2.0.1
  * Author: Shaun Scovil
  * Author URI: http://shaunscovil.com
  * Text Domain: premium-posts
@@ -54,12 +54,17 @@ class Premium_Posts {
         // Register hidden taxonomy used to tag premium posts.
         add_action( 'init', array( $this, 'register_taxonomy' ) );
 
-        // Add checkbox to Post editor.
+        // Add checkbox to Edit Post screen.
         add_action( 'post_submitbox_misc_actions', array( $this, 'add_checkbox_to_post_editor' ) );
 
-        // Add checkbox to Quick Edit screen.
+        // Add taxonomy column to Posts admin table manually, for Quick Edit menu support.
         add_filter( 'manage_posts_columns', array( $this, 'add_column_to_post_table' ) );
         add_action( 'manage_posts_custom_column', array( $this, 'populate_post_table_column' ), 10, 2 );
+
+        // Make 'Standard' taxonomy term filter the posts list in wp-admin.
+        add_action( 'pre_get_posts', array( $this, 'standard_term_filter' ) );
+
+        // Add checkbox to Quick Edit screen.
         add_action( 'quick_edit_custom_box', array( $this, 'add_checkbox_to_quick_edit' ), 10, 2 );
         add_action( 'admin_enqueue_scripts', array( $this, 'load_quick_edit_js' ) );
 
@@ -148,10 +153,36 @@ class Premium_Posts {
 
                 // Display whether the current post is marked as Premium (true) or not (false).
                 $true  = '<a href="' . get_admin_url( null, 'edit.php?sms_premium_posts=premium' ) . '">' . __( 'Premium', 'premium-posts' ) . '</a>';
-                $false = __( 'Standard', 'premium-posts' );
+                $false = '<a href="' . get_admin_url( null, 'edit.php?sms_premium_posts!=premium' ) . '">' . __( 'Standard', 'premium-posts' ) . '</a>';
                 echo $checked ? $true : $false;
                 break;
         }
+    }
+
+    /**
+     * Standard Term Filter
+     *
+     * Props to @s_ha_dum: http://bit.ly/13cKT6v
+     *
+     * @param $query
+     */
+    function standard_term_filter( $query ) {
+        if ( ! $query->is_admin )
+            return $query;
+
+        $term = isset( $_GET['sms_premium_posts!'] ) ? $_GET['sms_premium_posts!'] : null;
+        if ( $term && 'premium' == $term ) {
+            $taxquery = array(
+                array(
+                    'taxonomy' => 'sms_premium_posts',
+                    'field'    => 'slug',
+                    'terms'    => 'premium',
+                    'operator' => 'NOT IN'
+                )
+            );
+            $query->set( 'tax_query', $taxquery );
+        }
+        return $query;
     }
 
     /**

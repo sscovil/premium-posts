@@ -3,7 +3,7 @@ Contributors: sscovil
 Tags: post, posts, premium, mark, tag, flag, conditional
 Requires at least: 3.1
 Tested up to: 3.5.1
-Stable tag: 1.0
+Stable tag: 2.0.1
 
 Adds a checkbox to the Edit Post screen that allows you to mark a post as 'Premium'.
 
@@ -53,9 +53,13 @@ There are no settings or configuration for this plugin.
 
 == Changelog ==
 
+= 2.0.1 =
+* Added term filter for Standard posts in Posts admin table.
+
 = 2.0 =
 * Updated version now uses a hidden taxonomy to mark posts as premium.
 * Added a column to the post admin table and a checkbox to the Quick Edit menu.
+* Added term filter for Premium posts in Posts admin table.
 * Cleaned up code by moving functions into a singleton class.
 * Added a .pot file for localization.
 

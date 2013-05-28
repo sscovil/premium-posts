@@ -5,7 +5,7 @@ Requires at least: 3.1
 Tested up to: 3.5.1
 Stable tag: 2.1
 
-Mark posts as "Premium" and display a custom message or ad code for premium or standard posts.
+Mark posts as "Premium" and display a custom message or ad code.
 
 
 == Description ==

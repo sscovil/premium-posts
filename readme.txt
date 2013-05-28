@@ -10,17 +10,16 @@ Mark posts as "Premium" and display a custom message or ad code.
 
 == Description ==
 
-Want to add a special message or ad code to the most popular posts on your blog? This plugin enables you to do just that!
+Want to add a special message or ad code to your most popular blog posts? This plugin enables you to do just that!
 
-1. Install and activate this plugin.
-2. Mark your top posts as "Premium" using a checkbox that has been added to your Post Editor and Quick Edit screens.
-3. Go to `WP-Admin > Settings > Reading` and wdit the message you would like to display for premium and/or standard posts.
-4. Choose to place this message above or below the post content, or manually place it using the `<?php premium_posts(); ?>` template tag.
-5. View your posts to see your message!
-
-This plugin allows publishers to mark posts as "Premium". It also adds the conditional tag `is_premium_post()` for use in your theme template files.  
+1. Install and activate the plugin via `WP-Admin > Plugins`.
+2. Mark your top posts as "Premium" using a checkbox in the Post Editor.
+3. Go to `WP-Admin > Settings > Reading` and edit your premium post message.
+4. Choose to place your message above or below the post content, or place it manually using the `<?php premium_posts(); ?>` template tag.
 
 Place your premium/standard post message wherever you want by using the `<?php premium_posts(); ?>` template tag inside [The Loop](http://codex.wordpress.org/The_Loop "WordPress Codex: The Loop").
+
+This plugin also adds the conditional tag `is_premium_post()` for use in your theme template files.  
 
 You can also test if a specific post is marked as premium by passing the post ID (or post object) as a parameter to the `is_premium_post()` function.
 
@@ -35,9 +34,10 @@ Example:
 
 == Installation ==
 
-Extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation and then activate the Plugin from Plugins page.
-
-Settings for this plugin can be found in `WP-Admin > Settings > Reading` under the heading `Premium Posts`.
+1. Install and activate the plugin via `WP-Admin > Plugins`.
+2. Mark your top posts as "Premium" using a checkbox in the Post Editor.
+3. Go to `WP-Admin > Settings > Reading` and edit your premium post message.
+4. Choose to place your message above or below the post content, or place it manually using the `<?php premium_posts(); ?>` template tag.
 
 
 == Screenshots ==

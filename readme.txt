@@ -10,8 +10,6 @@ Mark posts as "Premium" and display a custom message or ad code for premium or s
 
 == Description ==
 
-** Premium Posts **
-
 Want to add a special message or ad code to the most popular posts on your blog? This plugin enables you to do just that!
 
 1. Install and activate this plugin.

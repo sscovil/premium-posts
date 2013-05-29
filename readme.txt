@@ -1,9 +1,10 @@
 === Premium Posts ===
+
 Contributors: sscovil 
 Tags: post, posts, premium, mark, tag, flag, conditional
 Requires at least: 3.1
 Tested up to: 3.5.1
-Stable tag: 2.2
+Stable tag: 2.2.1
 
 Mark posts as "Premium" and display a custom message or ad code.
 
@@ -45,6 +46,11 @@ Example:
 
 
 == Changelog ==
+
+= 2.2.1 =
+* Bug fix: save_post() method was throwing an error in the QuickPress dashboard widget.
+* Renamed premium_post_message() method to the more semantic get_post_message().
+* Clarified some inline documentation.
 
 = 2.2 =
 * Security update: Added settings field sanitization callback.

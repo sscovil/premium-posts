@@ -41,14 +41,14 @@ class Premium_Posts {
         add_filter( 'manage_posts_columns', array( $this, 'add_column_to_post_table' ) );
         add_action( 'manage_posts_custom_column', array( $this, 'populate_post_table_column' ), 10, 2 );
 
-        // Make 'Standard' taxonomy term filter the posts list in wp-admin.
+        // Make 'Standard' term link in Posts admin table filter the posts list.
         add_action( 'pre_get_posts', array( $this, 'standard_term_filter' ) );
 
         // Add checkbox to Quick Edit screen.
         add_action( 'quick_edit_custom_box', array( $this, 'add_checkbox_to_quick_edit' ), 10, 2 );
         add_action( 'admin_enqueue_scripts', array( $this, 'load_quick_edit_js' ) );
 
-        // Save premium post settings.
+        // Save post as premium or standard; used by Post Editor and Quick Edit.
         add_action( 'save_post', array( $this, 'save_post' ) );
 
         // Add premium/standard post message to post content.
@@ -97,7 +97,7 @@ class Premium_Posts {
             'hierarchical'      => false,
             'public'            => false,
             'show_ui'           => false,
-            'show_admin_column' => false,
+            'show_admin_column' => false, // Do this manually to provide reference for Quick Edit checkbox.
             'show_in_nav_menus' => false,
             'show_tagcloud'     => false,
             'rewrite'           => false,
@@ -153,7 +153,7 @@ class Premium_Posts {
                 // If the post is currently marked premium, the checkbox should be checked.
                 $checked = is_object_in_term( $post_id, 'sms_premium_posts', 'Premium' );
 
-                // Echo a hidden checkbox that will be added via JavaScript to the Quick Edit menu.
+                // Echo a hidden checkbox that will be referenced via JavaScript for the Quick Edit checkbox value.
                 echo
                     '<input style="visibility: hidden; display: none;" type="checkbox" name="premium_post_placeholder" id="premium_post" ' .
                     checked( $checked, true, false ) . ' readonly="readonly" />'
@@ -254,12 +254,12 @@ class Premium_Posts {
         if ( false !== wp_is_post_revision( $post_id ) )
             return $post_id;
 
-        // Verify nonce field for security.
-        if ( ! wp_verify_nonce( $_POST['premium_post_nonce'], SMS_PREMIUM_POSTS_BASE ) )
-            return $post_id;
-
         // Verify post type and save option.
         if ( 'post' == $_POST['post_type'] ) {
+
+            // Verify nonce field for security.
+            if ( ! wp_verify_nonce( $_POST['premium_post_nonce'], SMS_PREMIUM_POSTS_BASE ) )
+                return $post_id;
 
             // If the box is checked tag the post as premium; else remove the tag.
             if ( isset( $_POST['premium_post'] ) ) {
@@ -280,7 +280,7 @@ class Premium_Posts {
      */
     function insert_post_message( $content ) {
         if ( is_single() ) {
-            $message  = self::premium_post_message();
+            $message  = self::get_post_message();
             $position = self::get_settings( 'position' );
 
             switch( $position ) {
@@ -301,7 +301,7 @@ class Premium_Posts {
      *
      * @return array|bool|string
      */
-    public static function premium_post_message() {
+    public static function get_post_message() {
         if ( is_premium_post() )
             return self::get_settings( 'premium' );
 

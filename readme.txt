@@ -3,7 +3,7 @@ Contributors: sscovil
 Tags: post, posts, premium, mark, tag, flag, conditional
 Requires at least: 3.1
 Tested up to: 3.5.1
-Stable tag: 2.1
+Stable tag: 2.2
 
 Mark posts as "Premium" and display a custom message or ad code.
 
@@ -45,6 +45,9 @@ Example:
 
 
 == Changelog ==
+
+= 2.2 =
+* Security update: Added settings field sanitization callback.
 
 = 2.1 =
 * Added plugin settings to `WP-Admin > Settings > Reading` for easy management of premium & standard post messages.

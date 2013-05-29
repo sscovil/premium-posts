@@ -3,7 +3,7 @@
  * Plugin Name: Premium Posts
  * Plugin URI: https://github.com/sscovil/premium-posts
  * Description: Mark posts as "Premium" and display a custom message or ad code.
- * Version: 2.1
+ * Version: 2.2
  * Author: Shaun Scovil
  * Author URI: http://shaunscovil.com
  * Text Domain: premium-posts

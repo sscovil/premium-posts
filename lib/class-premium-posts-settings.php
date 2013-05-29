@@ -54,7 +54,7 @@ class Premium_Posts_Settings {
         $option_page = 'reading';
 
         // Register Plugin Settings
-        register_setting( $option_page, $option_name );
+        register_setting( $option_page, $option_name, array( $this, 'sanitize_settings' ) );
 
         // Add Plugin Settings Section to WP-Admin > Settings > Reading
         add_settings_section(
@@ -152,6 +152,21 @@ class Premium_Posts_Settings {
                 $label
             );
         }
+    }
+
+    function sanitize_settings( $settings ) {
+        foreach( $settings as $key => $value ) {
+            switch( $key ) {
+                case 'premium':
+                case 'standard':
+                    $settings[$key] = wp_kses_post( $value );
+                    break;
+                case 'position':
+                    $settings[$key] = esc_attr( $value );
+                    break;
+            }
+        }
+        return $settings;
     }
 
 }

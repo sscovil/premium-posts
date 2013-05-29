@@ -154,6 +154,12 @@ class Premium_Posts_Settings {
         }
     }
 
+    /**
+     * Sanitize Settings
+     *
+     * @param  array $settings Settings as key => value pairs before they are saved to the database.
+     * @return array
+     */
     function sanitize_settings( $settings ) {
         foreach( $settings as $key => $value ) {
             switch( $key ) {

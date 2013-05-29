@@ -255,7 +255,7 @@ class Premium_Posts {
             return $post_id;
 
         // Verify post type and save option.
-        if ( 'post' == $_POST['post_type'] ) {
+        if ( isset( $_POST['post_type'] ) && 'post' == $_POST['post_type'] ) {
 
             // Verify nonce field for security.
             if ( ! wp_verify_nonce( $_POST['premium_post_nonce'], SMS_PREMIUM_POSTS_BASE ) )

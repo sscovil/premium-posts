@@ -15,13 +15,9 @@ Want to add a special message or ad code to your most popular blog posts? This p
 1. Install and activate the plugin via `WP-Admin > Plugins`.
 2. Mark your top posts as "Premium" using a checkbox in the Post Editor.
 3. Go to `WP-Admin > Settings > Reading` and edit your premium post message.
-4. Choose to place your message above or below the post content, or place it manually using the `<?php premium_posts(); ?>` template tag.
+4. Choose to place your message above or below the post content, or place it manually using the `<?php premium_posts(); ?>` template tag inside [The Loop](http://codex.wordpress.org/The_Loop "WordPress Codex: The Loop").
 
-Place your premium/standard post message wherever you want by using the `<?php premium_posts(); ?>` template tag inside [The Loop](http://codex.wordpress.org/The_Loop "WordPress Codex: The Loop").
-
-This plugin also adds the conditional tag `is_premium_post()` for use in your theme template files.  
-
-You can also test if a specific post is marked as premium by passing the post ID (or post object) as a parameter to the `is_premium_post()` function.
+This plugin also adds the conditional tag `is_premium_post()` for use in your theme template files. You can use it to test if a specific post is marked as premium by passing the post ID (or post object) as a parameter.
 
 Example:
 
@@ -37,7 +33,7 @@ Example:
 1. Install and activate the plugin via `WP-Admin > Plugins`.
 2. Mark your top posts as "Premium" using a checkbox in the Post Editor.
 3. Go to `WP-Admin > Settings > Reading` and edit your premium post message.
-4. Choose to place your message above or below the post content, or place it manually using the `<?php premium_posts(); ?>` template tag.
+4. Choose to place your message above or below the post content, or place it manually using the `<?php premium_posts(); ?>` template tag inside [The Loop](http://codex.wordpress.org/The_Loop "WordPress Codex: The Loop").
 
 
 == Screenshots ==

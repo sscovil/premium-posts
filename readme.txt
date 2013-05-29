@@ -23,7 +23,7 @@ Example:
 
 `<?php if ( is_premium_post( $post_id ) ) { ?>
 
-	<?php get_the_title( $post_id ); ?> is a premium post!
+	<?php echo get_the_title( $post_id ); ?> is a premium post!
 
 <?php } ?>`
 

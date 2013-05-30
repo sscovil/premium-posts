@@ -128,8 +128,8 @@ class Premium_Posts_Settings {
     function editor( $args ) {
         $current = Premium_Posts::get_settings( $args['key'] ) ? Premium_Posts::get_settings( $args['key'] ) : $args['default'];
         wp_editor(
-            $current,
-            $editor_id = $args['id'],
+            wp_kses_post( $current ),
+            $editor_id = esc_attr( $args['id'] ),
             $settings = array(
                 'textarea_rows' => 6
             )
@@ -146,10 +146,10 @@ class Premium_Posts_Settings {
         foreach( $args['options'] as $value => $label ) {
             printf(
                 '<input type="radio" name="%1$s" value="%2$s" %3$s /> %4$s<br />',
-                $args['id'],
-                $value,
+                esc_attr( $args['id'] ),
+                esc_attr( $value ),
                 $checked = checked( $current, $value, $echo = false ),
-                $label
+                esc_attr( $label )
             );
         }
     }

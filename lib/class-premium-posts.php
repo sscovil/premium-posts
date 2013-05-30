@@ -215,8 +215,8 @@ class Premium_Posts {
         echo
             '<fieldset class="inline-edit-col-left"><div class="inline-edit-col">' .
             '<label for="premium_post" class="select-it">' .
-            '<input type="checkbox" name="premium_post" id="premium_post" /> ' .
-            $label . '</label></div></fieldset>'
+            '<input type="checkbox" name="premium_post" id="premium_post" />' .
+            '<span class="checkbox-title">' . $label . '</span></label></div></fieldset>'
         ;
     }
 

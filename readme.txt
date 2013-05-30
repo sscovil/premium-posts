@@ -4,7 +4,7 @@ Contributors: sscovil
 Tags: post, posts, premium, mark, tag, flag, conditional
 Requires at least: 3.1
 Tested up to: 3.5.1
-Stable tag: 2.2.2
+Stable tag: 2.3
 
 Mark posts as "Premium" and display a custom message or ad code.
 
@@ -47,6 +47,9 @@ Example:
 
 == Changelog ==
 
+= 2.3 =
+* Security update: Added data sanitization to plugin settings displayed in form fields on settings page.
+
 = 2.2.2 =
 * Bug fix: resolved undefined index error in `WP-Admin > Posts > Add New`.
 
@@ -66,7 +69,7 @@ Example:
 * Added term filter for Standard posts in Posts admin table.
 
 = 2.0 =
-* Updated version now uses a hidden taxonomy to mark posts as premium.
+* Updated version uses a hidden taxonomy to mark posts as premium.
 * Added a column to the `Posts` admin table.
 * Added a checkbox to the `Quick Edit` menu.
 * Added term filter for premium posts in `Posts` admin table.
